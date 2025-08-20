@@ -1,0 +1,274 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff); /* Soft gradient background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+/* Main Container for Forms/Content */
+.container {
+    max-width: 480px;
+    width: 90%; /* Responsive width */
+    margin: 20px auto;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+    box-sizing: border-box;
+    animation: fadeIn 0.8s ease-out; /* Fade-in animation */
+}
+
+/* Header Section */
+header {
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    border-radius: 12px 12px 0 0; /* Rounded top corners */
+    margin: -35px -35px 30px -35px; /* Extend header to container edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden; /* For potential background patterns */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Titles within the container */
+h2 {
+    text-align: center;
+    color: #343a40; /* Dark grey for titles */
+    margin-bottom: 30px;
+    font-size: 1.9em;
+    font-weight: 600;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea { /* Added textarea for completeness */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f8f9fa; /* Light background for inputs */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="file"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Bootstrap focus shadow */
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Button Styling */
+.btn {
+    background-color: #28a745; /* Bootstrap success green */
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.15em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px); /* More pronounced lift */
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(40, 167, 69, 0.2);
+}
+
+/* Link Styling (e.g., Logout) */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Specific styles for login page (to ensure proper centering) */
+#loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#loginPage .container {
+    margin-top: 0; /* Override default margin for vertical centering */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1.05em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    header {
+        margin: -20px -20px 25px -20px;
+        padding: 20px 0;
+        border-radius: 8px 8px 0 0;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}
+#dropArea {
+    border: 2px dashed #4CAF50;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #f0fff0, #e6ffe6);
+    transition: all 0.3s ease;
+}
+#dropArea.dragover {
+    background: #d2ffd2;
+    border-color: #2e7d32;
+}
+.preview-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.preview-container img, 
+.preview-container video {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+}
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+button:hover {
+    background: #45a049;
+}
